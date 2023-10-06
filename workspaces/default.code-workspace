@@ -1,0 +1,12 @@
+{
+    "folders": [
+        {
+            "name": "=== Workspaces ===",
+            "path": "."
+        },
+        {
+            "name": "=== Dev Container Settings ===",
+            "path": "../.devcontainer"
+        }
+    ]
+}

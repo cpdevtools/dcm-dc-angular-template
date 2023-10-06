@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: dockerfile
+    user: "node"
+    env_file:
+      - ".github.token.env"
+    volumes:
+      - ..:/devcontainer:cached
+      - bashhistory:/commandhistory
+      - dcm-npm-cache:/home/node/.npm
+      - dcm-pnpm-cache:/home/node/.pnpm-store/v3
+      - dcm-yarn-cache:/home/node/.cache/yarn
+      - dcm-nuget-cache:/home/node/.nuget
+
+
+
+volumes:
+  bashhistory:
+  dcm-nuget-cache:
+    external: true
+  dcm-pnpm-cache:
+    external: true
+  dcm-npm-cache:
+    external: true
+  dcm-yarn-cache:
+    external: true
+ 
