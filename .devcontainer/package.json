@@ -1,11 +1,18 @@
 {
     "name": "@cpdevtools/dcm-dc-angular-template",
     "private": true,
+    "version": "1.0.0",
     "scripts": {
         "dc-onCreateCommand": "pnpm run -r dc-onCreateCommand",
         "dc-updateContentCommand": "pnpm run -r dc-updateContentCommand",
         "dc-postCreateCommand": "pnpm run -r dc-postCreateCommand",
         "dc-postAttachCommand": "pnpm run -r dc-postAttachCommand",
-        "dc-postStartCommand": "pnpm run -r dc-postStartCommand"
+        "dc-postStartCommand": "pnpm run -r dc-postStartCommand",
+        "repo-run-s": "pnpm run -r --workspace-concurrency=1",
+        "repo-run-p": "pnpm run -r --workspace-concurrency=0",
+        "repo-exec-s": "pnpm -rc --workspace-concurrency=1 exec",
+        "repo-exec-p": "pnpm -rc --workspace-concurrency=0 exec",
+        "start": "pnpm run repo-run-p start",
+        "stop": "pnpm run repo-run-p stop"
     }
 }
